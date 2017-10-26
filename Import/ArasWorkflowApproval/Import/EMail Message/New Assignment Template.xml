@@ -1,0 +1,25 @@
+﻿<AML>
+ <Item type="EMail Message" id="6EEDF8615A354F0181A0EBB8F32465A4" action="add">
+  <body_html>&lt;BODY&gt;
+&lt;style&gt;
+  span {display:none}
+  &lt;/style&gt;
+&lt;span id="activity"&gt;${Item[1]/name}&lt;/span&gt;&lt;br/&gt;
+&lt;span id="itemNumber"&gt;${Item[2]/item_number}&lt;/span&gt;&lt;br/&gt;
+&lt;span id="itemType"&gt;${Item[@type="ItemType"]/name}&lt;/span&gt;&lt;br/&gt;
+&lt;span id="database"&gt;${Item[3]/database}&lt;/span&gt;&lt;br/&gt;
+&lt;span id="url"&gt;${Item[3]/url}&lt;/span&gt;
+&lt;div data-itemNumber="${Item[2]/item_number}" data-itemType="${Item[@type="ItemType"]/name}" data-database="${Item[3]/database}" data-url="${Item[3]/url}"  id="test"&gt;&lt;/div&gt;
+&lt;/BODY&gt;</body_html>
+  <body_plain />
+  <from_user keyed_name="Innovator Admin" type="User">30B991F927274FA3829655F50C99472E</from_user>
+  <query_string>&lt;Item type="Activity" id="${Item/ActivityId}" action="get" select="name,message"/&gt;
+&lt;Item type="${Item/@type}" id="${Item/@id}" action="get" select="item_number"/&gt;
+&lt;Item type="ItemType" action="GetUrl" select="database,url"/&gt;
+&lt;Item type="ItemType" id="${Item/@typeId}" action="get" select="name"/&gt;
+
+</query_string>
+  <subject>InBasket: new Assignment (${Item[2]/item_number})</subject>
+  <name>New Assignment Template</name>
+ </Item>
+</AML>
