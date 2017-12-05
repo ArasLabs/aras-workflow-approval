@@ -6,11 +6,20 @@ Innovator innovator = this.getInnovator();
 
 string database = CCO.DB.DatabaseName;
 string url = CCO.Request.Url.ToString();
+string host = string.Empty;
+
+Item urlItem = innovator.newItem("Variable", "get");
+urlItem.setProperty("name", "InnovatorUrl");
+urlItem = urlItem.apply();
+
+if (!urlItem.isError())
+{
+    host = urlItem.getProperty("value", string.Empty);
+}
 
 Item result = innovator.newItem();
-
 result.setProperty("database", database);
-result.setProperty("url", url);
+result.setProperty("host", host);
 
 return result;]]></method_code>
   <method_type>C#</method_type>
