@@ -55,17 +55,21 @@ You can read [more about the Aras Workflow Approval add-in here](https://appsour
 3. Open and lock your E-mail Message item.
 4. Add the following to the Body HTML field on your E-mail Message item:
 
-```(xml)
-    <style>
-      span {display:none}
-    </style>
-
-    <span id="activity">${Item[1]/name}</span><br/>
-    <span id="itemNumber">${Item[2]/item_number}</span><br/>
-    <span id="itemType">${Item[@type="ItemType"]/name}</span><br/>
-    <span id="database">${Item[3]/database}</span><br/>
-    <span id="host">${Item[3]/host}</span><br/>
-    <span id="trigger">InBasket</span>
+```(html)
+    <BODY>
+        <style>
+            span {
+                display: none
+            }
+        </style>
+        <p>You have been assigned a new workflow activity in Aras Innovator. Please open the Aras app above to complete the activity.</p>
+        <span id="activity">${Item[1]/name}</span><br/>
+        <span id="itemNumber">${Item[2]/item_number}</span><br/>
+        <span id="itemType">${Item[@type="ItemType"]/name}</span><br/>
+        <span id="database">${Item[3]/database}</span><br/>
+        <span id="host">${Item[3]/host}</span><br/>
+        <span id="trigger">InBasket</span>
+    </BODY>
 ```
 
 5. Add the following to the Query String field:
