@@ -21,7 +21,7 @@
 &lt;Item type="ItemType" id="${Item/@typeId}" action="get" select="name"/&gt;
 
 </query_string>
-  <subject>InBasket: new Assignment (${Item[2]/item_number})</subject>
-  <name>New Assignment Template</name>
+  <subject>New Assignment (${Item[2]/item_number})</subject>
+  <name>O365 Outlook Workflow Notification</name>
  </Item>
 </AML>
