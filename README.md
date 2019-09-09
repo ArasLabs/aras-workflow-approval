@@ -33,6 +33,16 @@ You can read [more about the Aras Workflow Approval add-in here](https://appsour
 8. Click **Import** in the top left corner.
 9. Close the Aras Package Import tool.
 
+#### Setup the Server Url Variable
+
+1. Login to your Innovator instance as an administrator.
+2. Navigate to **Administration > Variables** in the TOC.
+3. Search for the Variable named *ServerUrl* and open it for editing.
+4. Enter your Innovator url in the value field. For example, if you login to Innovator at https://myhost.com/Innovator11SP14, use that as the value.
+   * Do not include a trailing slash at the end of the url.
+   * Do not include "/Client" or any additional characters in the url path.
+1. Save and close the Variable item.
+
 #### Option 1: Use the Aras Workflow Approval email message template
 
 1. Log in to Aras as an administrator.
